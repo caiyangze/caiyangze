@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbVipOrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbVipOrder">
+            <id property="orderId" column="order_id" />
+            <result property="userId" column="user_id" />
+            <result property="orderNo" column="order_no" />
+            <result property="vipType" column="vip_type" />
+            <result property="amount" column="amount" />
+            <result property="payAmount" column="pay_amount" />
+            <result property="discountAmount" column="discount_amount" />
+            <result property="payType" column="pay_type" />
+            <result property="payTime" column="pay_time" />
+            <result property="transactionId" column="transaction_id" />
+            <result property="startTime" column="start_time" />
+            <result property="endTime" column="end_time" />
+            <result property="orderStatus" column="order_status" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        order_id,user_id,order_no,vip_type,amount,pay_amount,
+        discount_amount,pay_type,pay_time,transaction_id,start_time,
+        end_time,order_status,created_at,updated_at
+    </sql>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbGameMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbGame">
+            <id property="gameId" column="game_id" />
+            <result property="gameName" column="game_name" />
+            <result property="gameDesc" column="game_desc" />
+            <result property="gameIcon" column="game_icon" />
+            <result property="gameType" column="game_type" />
+            <result property="playerMin" column="player_min" />
+            <result property="playerMax" column="player_max" />
+            <result property="duration" column="duration" />
+            <result property="isVip" column="is_vip" />
+            <result property="gameStatus" column="game_status" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        game_id,game_name,game_desc,game_icon,game_type,player_min,
+        player_max,duration,is_vip,game_status,created_at,
+        updated_at
+    </sql>
+</mapper>

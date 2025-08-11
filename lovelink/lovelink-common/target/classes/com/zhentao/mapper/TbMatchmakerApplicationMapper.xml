@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbMatchmakerApplicationMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbMatchmakerApplication">
+            <id property="applicationId" column="application_id" />
+            <result property="userId" column="user_id" />
+            <result property="realName" column="real_name" />
+            <result property="phone" column="phone" />
+            <result property="idCardNo" column="id_card_no" />
+            <result property="idCardFront" column="id_card_front" />
+            <result property="idCardBack" column="id_card_back" />
+            <result property="serviceArea" column="service_area" />
+            <result property="introduction" column="introduction" />
+            <result property="experience" column="experience" />
+            <result property="applicationStatus" column="application_status" />
+            <result property="rejectReason" column="reject_reason" />
+            <result property="reviewerId" column="reviewer_id" />
+            <result property="reviewTime" column="review_time" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        application_id,user_id,real_name,phone,id_card_no,id_card_front,
+        id_card_back,service_area,introduction,experience,application_status,
+        reject_reason,reviewer_id,review_time,created_at,updated_at
+    </sql>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbFeedbackMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbFeedback">
+            <id property="feedbackId" column="feedback_id" />
+            <result property="userId" column="user_id" />
+            <result property="feedbackType" column="feedback_type" />
+            <result property="feedbackContent" column="feedback_content" />
+            <result property="contactInfo" column="contact_info" />
+            <result property="imageUrls" column="image_urls" />
+            <result property="feedbackStatus" column="feedback_status" />
+            <result property="replyContent" column="reply_content" />
+            <result property="handlerId" column="handler_id" />
+            <result property="handleTime" column="handle_time" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        feedback_id,user_id,feedback_type,feedback_content,contact_info,image_urls,
+        feedback_status,reply_content,handler_id,handle_time,created_at,
+        updated_at
+    </sql>
+</mapper>

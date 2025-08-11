@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbMomentMediaMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbMomentMedia">
+            <id property="mediaId" column="media_id" />
+            <result property="momentId" column="moment_id" />
+            <result property="mediaType" column="media_type" />
+            <result property="mediaUrl" column="media_url" />
+            <result property="coverUrl" column="cover_url" />
+            <result property="width" column="width" />
+            <result property="height" column="height" />
+            <result property="duration" column="duration" />
+            <result property="sortOrder" column="sort_order" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        media_id,moment_id,media_type,media_url,cover_url,width,
+        height,duration,sort_order
+    </sql>
+</mapper>

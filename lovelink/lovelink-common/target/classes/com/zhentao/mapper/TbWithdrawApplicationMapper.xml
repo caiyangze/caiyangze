@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbWithdrawApplicationMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbWithdrawApplication">
+            <id property="withdrawId" column="withdraw_id" />
+            <result property="userId" column="user_id" />
+            <result property="withdrawNo" column="withdraw_no" />
+            <result property="withdrawAmount" column="withdraw_amount" />
+            <result property="feeAmount" column="fee_amount" />
+            <result property="actualAmount" column="actual_amount" />
+            <result property="withdrawType" column="withdraw_type" />
+            <result property="withdrawAccount" column="withdraw_account" />
+            <result property="accountName" column="account_name" />
+            <result property="bankName" column="bank_name" />
+            <result property="withdrawStatus" column="withdraw_status" />
+            <result property="rejectReason" column="reject_reason" />
+            <result property="reviewerId" column="reviewer_id" />
+            <result property="reviewTime" column="review_time" />
+            <result property="paymentTime" column="payment_time" />
+            <result property="paymentProof" column="payment_proof" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        withdraw_id,user_id,withdraw_no,withdraw_amount,fee_amount,actual_amount,
+        withdraw_type,withdraw_account,account_name,bank_name,withdraw_status,
+        reject_reason,reviewer_id,review_time,payment_time,payment_proof,
+        created_at,updated_at
+    </sql>
+</mapper>

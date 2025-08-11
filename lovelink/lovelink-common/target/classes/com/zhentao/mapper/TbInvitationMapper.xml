@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbInvitationMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbInvitation">
+            <id property="invitationId" column="invitation_id" />
+            <result property="inviterId" column="inviter_id" />
+            <result property="inviteeId" column="invitee_id" />
+            <result property="invitationCode" column="invitation_code" />
+            <result property="invitationLink" column="invitation_link" />
+            <result property="invitationType" column="invitation_type" />
+            <result property="invitationStatus" column="invitation_status" />
+            <result property="registerTime" column="register_time" />
+            <result property="rewardStatus" column="reward_status" />
+            <result property="rewardAmount" column="reward_amount" />
+            <result property="rewardCoin" column="reward_coin" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        invitation_id,inviter_id,invitee_id,invitation_code,invitation_link,invitation_type,
+        invitation_status,register_time,reward_status,reward_amount,reward_coin,
+        created_at,updated_at
+    </sql>
+</mapper>

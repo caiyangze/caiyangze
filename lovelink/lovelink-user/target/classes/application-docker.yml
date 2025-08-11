@@ -1,0 +1,102 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: lovelink-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/lovelink?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: lovelink
+    password: lovelink123
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  redis:
+    host: redis
+    port: 6379
+    database: 1
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos:8848
+        namespace: public
+        group: DEFAULT_GROUP
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  # CORS配置
+  mvc:
+    cors:
+      # 允许跨域请求的路径
+      mapping: /**
+      # 允许跨域请求的域名
+      allowed-origins: "*"
+      # 允许请求的方法
+      allowed-methods: "*"
+      # 允许的头信息
+      allowed-headers: "*"
+      # 是否允许发送Cookie
+      allow-credentials: false
+      # 跨域允许时间
+      max-age: 3600
+      # 暴露的头信息
+      exposed-headers: 
+        - Authorization
+        - Content-Type
+        - X-Requested-With
+        - Accept
+        - Origin
+        - Access-Control-Request-Method
+        - Access-Control-Request-Headers
+        - Access-Control-Allow-Origin
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# MinIO配置
+minio:
+  endpoint: http://minio:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: lovelink
+
+# 日志配置
+logging:
+  level:
+    com.zhentao: debug
+    org.springframework.web: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: /app/logs/lovelink-user.log
+    max-size: 100MB
+    max-history: 30
+
+# 管理端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized

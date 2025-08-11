@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbGameRoomMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbGameRoom">
+            <id property="roomId" column="room_id" />
+            <result property="gameId" column="game_id" />
+            <result property="creatorId" column="creator_id" />
+            <result property="roomName" column="room_name" />
+            <result property="roomPassword" column="room_password" />
+            <result property="maxPlayers" column="max_players" />
+            <result property="currentPlayers" column="current_players" />
+            <result property="roomStatus" column="room_status" />
+            <result property="startTime" column="start_time" />
+            <result property="endTime" column="end_time" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        room_id,game_id,creator_id,room_name,room_password,max_players,
+        current_players,room_status,start_time,end_time,created_at,
+        updated_at
+    </sql>
+</mapper>

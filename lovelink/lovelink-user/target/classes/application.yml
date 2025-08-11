@@ -1,0 +1,80 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: lovelink-user
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://obmt6t2w67onmti8-mi.aliyun-cn-beijing-internet.oceanbase.cloud:3306/lovelink?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: feidaowudi
+    password: feidaowudi_520
+  redis:
+    host: 182.254.244.209
+    port: 6379
+    database: 1
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 182.254.244.209:8848
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  # CORS配置
+  mvc:
+    cors:
+      # 允许跨域请求的路径
+      mapping: /**
+      # 允许跨域请求的域名
+      allowed-origins: "*"
+      # 允许请求的方法
+      allowed-methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+        - HEAD
+        - PATCH
+      # 允许的头信息
+      allowed-headers: "*"
+      # 是否允许发送Cookie
+      allow-credentials: false
+      # 跨域允许时间
+      max-age: 3600
+      # 暴露的头信息
+      exposed-headers:
+        - Authorization
+        - Content-Type
+        - X-Requested-With
+        - Accept
+        - Origin
+        - Access-Control-Request-Method
+        - Access-Control-Request-Headers
+        - Access-Control-Allow-Origin
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# MinIO配置
+minio:
+  endpoint: http://182.254.244.209:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: lovelink

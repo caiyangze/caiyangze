@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbCoinRechargeMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbCoinRecharge">
+            <id property="rechargeId" column="recharge_id" />
+            <result property="userId" column="user_id" />
+            <result property="orderNo" column="order_no" />
+            <result property="coinAmount" column="coin_amount" />
+            <result property="payAmount" column="pay_amount" />
+            <result property="bonusAmount" column="bonus_amount" />
+            <result property="payType" column="pay_type" />
+            <result property="payTime" column="pay_time" />
+            <result property="transactionId" column="transaction_id" />
+            <result property="orderStatus" column="order_status" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        recharge_id,user_id,order_no,coin_amount,pay_amount,bonus_amount,
+        pay_type,pay_time,transaction_id,order_status,created_at,
+        updated_at
+    </sql>
+</mapper>

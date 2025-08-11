@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbMatchmakerPerformanceMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbMatchmakerPerformance">
+            <id property="performanceId" column="performance_id" />
+            <result property="matchmakerId" column="matchmaker_id" />
+            <result property="year" column="year" />
+            <result property="month" column="month" />
+            <result property="requestCount" column="request_count" />
+            <result property="arrangementCount" column="arrangement_count" />
+            <result property="successCount" column="success_count" />
+            <result property="satisfactionAvg" column="satisfaction_avg" />
+            <result property="commissionAmount" column="commission_amount" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        performance_id,matchmaker_id,year,month,request_count,arrangement_count,
+        success_count,satisfaction_avg,commission_amount,created_at,updated_at
+    </sql>
+</mapper>

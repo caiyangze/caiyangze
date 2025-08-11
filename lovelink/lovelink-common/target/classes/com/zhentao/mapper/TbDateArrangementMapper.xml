@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbDateArrangementMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbDateArrangement">
+            <id property="arrangementId" column="arrangement_id" />
+            <result property="requestId" column="request_id" />
+            <result property="matchmakerId" column="matchmaker_id" />
+            <result property="userId" column="user_id" />
+            <result property="targetUserId" column="target_user_id" />
+            <result property="dateTime" column="date_time" />
+            <result property="dateLocation" column="date_location" />
+            <result property="dateType" column="date_type" />
+            <result property="datePlan" column="date_plan" />
+            <result property="userAConfirm" column="user_a_confirm" />
+            <result property="userBConfirm" column="user_b_confirm" />
+            <result property="arrangementStatus" column="arrangement_status" />
+            <result property="cancelReason" column="cancel_reason" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        arrangement_id,request_id,matchmaker_id,user_id,target_user_id,date_time,
+        date_location,date_type,date_plan,user_a_confirm,user_b_confirm,
+        arrangement_status,cancel_reason,created_at,updated_at
+    </sql>
+</mapper>

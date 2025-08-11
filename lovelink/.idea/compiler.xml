@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lovelink-social" />
+        <module name="lovelink-common" />
+        <module name="langchain4j-ai" />
+        <module name="lovelink-user" />
+        <module name="lovelink-matchmaker" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="langchain4j-ai (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lovelink" options="-parameters" />
+      <module name="lovelink-common" options="-parameters" />
+      <module name="lovelink-matchmaker" options="-parameters" />
+      <module name="lovelink-social" options="-parameters" />
+      <module name="lovelink-user" options="-parameters" />
+    </option>
+  </component>
+</project>

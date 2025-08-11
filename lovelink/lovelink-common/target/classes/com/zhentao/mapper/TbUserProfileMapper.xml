@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbUserProfileMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbUserProfile">
+            <id property="profileId" column="profile_id" />
+            <result property="userId" column="user_id" />
+            <result property="realName" column="real_name" />
+            <result property="age" column="age" />
+            <result property="height" column="height" />
+            <result property="weight" column="weight" />
+            <result property="education" column="education" />
+            <result property="educationCert" column="education_cert" />
+            <result property="company" column="company" />
+            <result property="position" column="position" />
+            <result property="incomeLevel" column="income_level" />
+            <result property="workCity" column="work_city" />
+            <result property="hometown" column="hometown" />
+            <result property="maritalStatus" column="marital_status" />
+            <result property="hasChildren" column="has_children" />
+            <result property="houseStatus" column="house_status" />
+            <result property="carStatus" column="car_status" />
+            <result property="selfIntroduction" column="self_introduction" />
+            <result property="hobby" column="hobby" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        profile_id,user_id,real_name,age,height,weight,
+        education,education_cert,company,position,income_level,
+        work_city,hometown,marital_status,has_children,house_status,
+        car_status,self_introduction,hobby,created_at,updated_at
+    </sql>
+</mapper>

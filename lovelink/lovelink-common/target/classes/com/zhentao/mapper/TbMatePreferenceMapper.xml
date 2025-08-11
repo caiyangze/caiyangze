@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbMatePreferenceMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbMatePreference">
+            <id property="preferenceId" column="preference_id" />
+            <result property="userId" column="user_id" />
+            <result property="ageMin" column="age_min" />
+            <result property="ageMax" column="age_max" />
+            <result property="heightMin" column="height_min" />
+            <result property="heightMax" column="height_max" />
+            <result property="educationMin" column="education_min" />
+            <result property="incomeMin" column="income_min" />
+            <result property="maritalStatus" column="marital_status" />
+            <result property="workCity" column="work_city" />
+            <result property="hasHouse" column="has_house" />
+            <result property="hasCar" column="has_car" />
+            <result property="otherRequirements" column="other_requirements" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        preference_id,user_id,age_min,age_max,height_min,height_max,
+        education_min,income_min,marital_status,work_city,has_house,
+        has_car,other_requirements,created_at,updated_at
+    </sql>
+</mapper>
