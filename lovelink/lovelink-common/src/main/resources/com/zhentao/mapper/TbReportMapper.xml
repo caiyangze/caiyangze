@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbReportMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbReport">
+            <id property="reportId" column="report_id" />
+            <result property="reporterId" column="reporter_id" />
+            <result property="reportedId" column="reported_id" />
+            <result property="reportType" column="report_type" />
+            <result property="reasonType" column="reason_type" />
+            <result property="reasonDesc" column="reason_desc" />
+            <result property="evidenceUrls" column="evidence_urls" />
+            <result property="reportStatus" column="report_status" />
+            <result property="handleResult" column="handle_result" />
+            <result property="handlerId" column="handler_id" />
+            <result property="handleTime" column="handle_time" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        report_id,reporter_id,reported_id,report_type,reason_type,reason_desc,
+        evidence_urls,report_status,handle_result,handler_id,handle_time,
+        created_at,updated_at
+    </sql>
+</mapper>

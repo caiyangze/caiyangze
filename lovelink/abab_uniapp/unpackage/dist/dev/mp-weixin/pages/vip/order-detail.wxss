@@ -1,0 +1,189 @@
+
+.order-detail-page.data-v-8ee6528b {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20rpx 0;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+.page-header.data-v-8ee6528b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 0 20rpx;
+  position: relative;
+}
+.header-left.data-v-8ee6528b, .header-right.data-v-8ee6528b {
+  flex: 1;
+}
+.back-button.data-v-8ee6528b {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(10rpx);
+          backdrop-filter: blur(10rpx);
+}
+.back-button.data-v-8ee6528b:active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0.95);
+}
+.back-icon.data-v-8ee6528b {
+  font-size: 32rpx;
+  color: white;
+  font-weight: bold;
+}
+.page-title.data-v-8ee6528b {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 订单状态 */
+.status-section.data-v-8ee6528b {
+  text-align: center;
+  padding: 40rpx 0;
+}
+.status-icon.data-v-8ee6528b {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20rpx;
+}
+.status-icon.status-pending.data-v-8ee6528b {
+  background: linear-gradient(45deg, #FFA726, #FF9800);
+}
+.status-icon.status-success.data-v-8ee6528b {
+  background: linear-gradient(45deg, #66BB6A, #4CAF50);
+}
+.status-icon.status-cancelled.data-v-8ee6528b {
+  background: linear-gradient(45deg, #EF5350, #F44336);
+}
+.status-icon.status-refunded.data-v-8ee6528b {
+  background: linear-gradient(45deg, #42A5F5, #2196F3);
+}
+.status-emoji.data-v-8ee6528b {
+  font-size: 40rpx;
+}
+.status-text.data-v-8ee6528b {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 8rpx;
+}
+.status-desc.data-v-8ee6528b {
+  display: block;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 信息卡片 */
+.order-info-section.data-v-8ee6528b, .validity-section.data-v-8ee6528b {
+  margin-bottom: 30rpx;
+  padding: 0 10rpx;
+}
+.section-title.data-v-8ee6528b {
+  margin-bottom: 20rpx;
+}
+.title-text.data-v-8ee6528b {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: white;
+}
+.info-card.data-v-8ee6528b, .validity-card.data-v-8ee6528b {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16rpx;
+  padding: 30rpx;
+  width: 100% !important;
+  margin: 0;
+  box-sizing: border-box;
+}
+.info-item.data-v-8ee6528b, .validity-item.data-v-8ee6528b {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.info-item.data-v-8ee6528b:last-child, .validity-item.data-v-8ee6528b:last-child {
+  border-bottom: none;
+}
+.info-label.data-v-8ee6528b, .validity-label.data-v-8ee6528b {
+  font-size: 28rpx;
+  color: #666;
+  flex: 1;
+}
+.info-value.data-v-8ee6528b, .validity-value.data-v-8ee6528b {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  flex: 1;
+  text-align: right;
+}
+.info-value.amount.data-v-8ee6528b {
+  color: #FF6B6B;
+  font-weight: bold;
+}
+.info-value.discount.data-v-8ee6528b {
+  color: #4CAF50;
+  font-weight: bold;
+}
+.info-value.transaction-id.data-v-8ee6528b {
+  font-size: 24rpx;
+  font-family: monospace;
+}
+.validity-duration.data-v-8ee6528b {
+  text-align: center;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+.duration-text.data-v-8ee6528b {
+  font-size: 26rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+/* 底部按钮 */
+.bottom-actions.data-v-8ee6528b {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10rpx);
+          backdrop-filter: blur(10rpx);
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.action-button.data-v-8ee6528b {
+  width: 100%;
+  height: 80rpx;
+  border: none;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.action-button.primary.data-v-8ee6528b {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: white;
+  box-shadow: 0 8rpx 25rpx rgba(255, 215, 0, 0.4);
+}
+.action-button.data-v-8ee6528b:active {
+  transform: translateY(2rpx);
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbMatchmakerMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbMatchmaker">
+            <id property="matchmakerId" column="matchmaker_id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+            <result property="idCardNo" column="id_card_no" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="matchmakerLevel" column="matchmaker_level" jdbcType="TINYINT"/>
+            <result property="serviceArea" column="service_area" jdbcType="VARCHAR"/>
+            <result property="serviceYears" column="service_years" jdbcType="INTEGER"/>
+            <result property="successCount" column="success_count" jdbcType="INTEGER"/>
+            <result property="introduction" column="introduction" jdbcType="VARCHAR"/>
+            <result property="certification" column="certification" jdbcType="VARCHAR"/>
+            <result property="matchmakerStatus" column="matchmaker_status" jdbcType="TINYINT"/>
+            <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="updatedAt" column="updated_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        matchmaker_id,user_id,real_name,
+        id_card_no,phone,matchmaker_level,
+        service_area,service_years,success_count,
+        introduction,certification,matchmaker_status,
+        created_at,updated_at
+    </sql>
+</mapper>

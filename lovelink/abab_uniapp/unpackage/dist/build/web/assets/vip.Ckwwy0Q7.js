@@ -1,0 +1,1 @@
+import{N as s}from"./index-BpPI9udZ.js";const a=()=>s.get("/VIP/packages"),t=()=>s.get("/VIP/payMethods"),e=a=>s.post("/VIP/createOrder",a),o=a=>s.post("/VIP/pay",a),p=a=>s.get(`/VIP/order/${a}`),r=()=>s.get("/VIP/status");export{t as a,p as b,e as c,r as d,a as g,o as p};

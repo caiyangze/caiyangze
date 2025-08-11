@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景效果测试</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .user-detail-page {
+            width: 100vw;
+            min-height: 100vh;
+            background: linear-gradient(135deg,
+                #1a1a2e 0%,
+                #16213e 25%,
+                #0f3460 50%,
+                #533483 75%,
+                #7209b7 100%
+            );
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .user-detail-page::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,1), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 200px 60px, rgba(196, 113, 237, 0.8), transparent),
+                radial-gradient(2px 2px at 250px 20px, rgba(18, 194, 233, 0.6), transparent),
+                radial-gradient(1px 1px at 300px 90px, rgba(246, 79, 89, 0.7), transparent);
+            background-repeat: repeat;
+            background-size: 350px 150px;
+            animation: sparkle 25s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .user-detail-page::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(196, 113, 237, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(246, 79, 89, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 45% 60%, rgba(18, 194, 233, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(114, 9, 183, 0.2) 0%, transparent 40%),
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.04) 50%, transparent 70%);
+            animation: gradientFlow 18s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-25px) translateX(10px); }
+            50% { transform: translateY(-50px) translateX(-5px); }
+            75% { transform: translateY(-75px) translateX(15px); }
+            100% { transform: translateY(-100px) translateX(0px); }
+        }
+
+        @keyframes gradientFlow {
+            0%, 100% {
+                background:
+                    radial-gradient(circle at 15% 25%, rgba(196, 113, 237, 0.4) 0%, transparent 50%),
+                    radial-gradient(circle at 85% 75%, rgba(246, 79, 89, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 45% 60%, rgba(18, 194, 233, 0.25) 0%, transparent 50%);
+            }
+            33% {
+                background:
+                    radial-gradient(circle at 75% 15%, rgba(196, 113, 237, 0.45) 0%, transparent 50%),
+                    radial-gradient(circle at 25% 85%, rgba(246, 79, 89, 0.35) 0%, transparent 50%),
+                    radial-gradient(circle at 65% 40%, rgba(18, 194, 233, 0.3) 0%, transparent 50%);
+            }
+            66% {
+                background:
+                    radial-gradient(circle at 35% 75%, rgba(196, 113, 237, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 65% 25%, rgba(246, 79, 89, 0.25) 0%, transparent 50%),
+                    radial-gradient(circle at 15% 80%, rgba(18, 194, 233, 0.35) 0%, transparent 50%);
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, 
+                rgba(196, 113, 237, 1), 
+                rgba(18, 194, 233, 1),
+                rgba(246, 79, 89, 1)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(196, 113, 237, 0.5);
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.12), 
+                rgba(196, 113, 237, 0.08),
+                rgba(18, 194, 233, 0.06)
+            );
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 4px 16px rgba(196, 113, 237, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight {
+            color: rgba(196, 113, 237, 1);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-detail-page">
+        <div class="content">
+            <h1 class="title">🌟 现代化背景效果测试</h1>
+            <p class="description">
+                这是用户详情页面的现代化背景效果展示，包含星光闪烁动画和渐变流动效果。
+            </p>
+            
+            <div class="card">
+                <h2>✨ 背景特效包含：</h2>
+                <ul class="feature-list">
+                    <li><span class="highlight">🎨 深色渐变背景</span> - 紫色系主题色彩</li>
+                    <li><span class="highlight">⭐ 星光闪烁动画</span> - 动态星光效果</li>
+                    <li><span class="highlight">🌊 渐变流动效果</span> - 彩色光晕动画</li>
+                    <li><span class="highlight">💫 毛玻璃效果</span> - 现代化视觉层次</li>
+                    <li><span class="highlight">🎯 响应式设计</span> - 适配各种设备</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🎯 设计理念：</h2>
+                <p>采用现代化的设计语言，通过多层背景叠加、动态效果和毛玻璃材质，营造出科技感十足的视觉体验。色彩搭配以紫色为主调，辅以蓝色和粉色，形成和谐统一的视觉效果。</p>
+            </div>
+
+            <div class="card">
+                <h2>🚀 技术实现：</h2>
+                <ul class="feature-list">
+                    <li>使用 CSS3 linear-gradient 创建渐变背景</li>
+                    <li>使用 radial-gradient 实现星光点缀效果</li>
+                    <li>使用 @keyframes 创建流畅的动画效果</li>
+                    <li>使用 backdrop-filter 实现毛玻璃效果</li>
+                    <li>使用 z-index 管理层级关系</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+import{N as e}from"./index-BpPI9udZ.js";const s=(s=1,t=10)=>e.post("/loveSquare/list",{pageNum:s,pageSize:t}),t=(s=4)=>e.post("/loveSquare/list",{pageNum:1,pageSize:s}),a={getUserList:s,getRecommendUsers:t};export{a as default,t as getRecommendUsers,s as getUserList};

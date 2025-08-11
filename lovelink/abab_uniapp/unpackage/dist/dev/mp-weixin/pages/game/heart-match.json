@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "心动速配",
+  "usingComponents": {
+    "voucher-selector": "../../components/voucher-selector/voucher-selector"
+  }
+}

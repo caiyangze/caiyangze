@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纯色图标预览 - 聊巴TabBar图标</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(45deg, #12C2E9, #C471ED, #F64F59);
+            background-size: 300% 300%;
+            animation: gradientAnimation 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .tab-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 10px;
+            position: relative;
+            opacity: 1;
+        }
+        
+        .icon-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* 首页图标 - 现代化房子 */
+        .tab-icon.home::before {
+            content: '';
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 28px;
+            height: 24px;
+            background: #fff;
+            border-radius: 0 0 6px 6px;
+            box-shadow: inset 0 -8px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .tab-icon.home::after {
+            content: '';
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 18px solid #fff;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        /* 广场图标 - 网格 */
+        .tab-icon.square::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            background: 
+                linear-gradient(#fff 0, #fff 8px, transparent 8px, transparent 16px, #fff 16px, #fff 24px, transparent 24px, transparent 32px),
+                linear-gradient(90deg, #fff 0, #fff 8px, transparent 8px, transparent 16px, #fff 16px, #fff 24px, transparent 24px, transparent 32px);
+            border-radius: 4px;
+        }
+        
+        /* 发布按钮 */
+        .publish-btn {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #F093FB, #F5576C);
+            background-size: 400% 400%;
+            animation: publishGradient 4s ease infinite;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.3),
+                0 4px 15px rgba(255, 107, 107, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            margin-bottom: 10px;
+            margin-top: 8px;
+            position: relative;
+            overflow: hidden;
+            text-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.4),
+                0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .publish-btn::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: innerGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes publishGradient {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes innerGlow {
+            0% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+        }
+        
+        /* 消息图标 - 对话框 */
+        .tab-icon.message::before {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 20px;
+            border: 3px solid #fff;
+            border-radius: 8px;
+        }
+        
+        .tab-icon.message::after {
+            content: '';
+            position: absolute;
+            bottom: 25%;
+            left: 60%;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #fff;
+        }
+        
+        /* 我的图标 - 人像 */
+        .tab-icon.mine::before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+        }
+
+        .tab-icon.mine::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 18px;
+            border: 3px solid #fff;
+            border-top: none;
+            border-radius: 0 0 14px 14px;
+        }
+
+        /* 金币图标 - 圆形金币 */
+        .tab-icon.coin::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+        }
+
+        .tab-icon.coin::after {
+            content: '¥';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .features {
+            text-align: left;
+            margin-top: 30px;
+        }
+        
+        .features h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .features li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ECDC4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 纯色图标预览</h1>
+        <p class="subtitle">聊巴项目 TabBar 导航栏图标</p>
+        
+        <div class="icon-grid">
+            <div class="icon-item">
+                <div class="tab-icon home"></div>
+                <div class="icon-name">首页</div>
+            </div>
+
+            <div class="icon-item">
+                <div class="tab-icon square"></div>
+                <div class="icon-name">广场</div>
+            </div>
+
+            <div class="icon-item">
+                <div class="publish-btn">+</div>
+                <div class="icon-name">发布</div>
+            </div>
+
+            <div class="icon-item">
+                <div class="tab-icon message"></div>
+                <div class="icon-name">消息</div>
+            </div>
+
+            <div class="icon-item">
+                <div class="tab-icon mine"></div>
+                <div class="icon-name">我的</div>
+            </div>
+
+            <div class="icon-item">
+                <div class="tab-icon coin"></div>
+                <div class="icon-name">金币</div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h3>🚀 设计特点</h3>
+            <ul>
+                <li>纯CSS绘制，无需图片资源</li>
+                <li>矢量图标，任意缩放不失真</li>
+                <li>统一的线条风格，简洁现代</li>
+                <li>白色纯色设计，适配各种背景</li>
+                <li>发布按钮采用渐变动画，突出显示</li>
+                <li>金币图标带有光泽效果，更加生动</li>
+                <li>响应式设计，适配不同设备</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

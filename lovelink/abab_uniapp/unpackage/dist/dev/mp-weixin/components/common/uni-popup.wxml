@@ -1,0 +1,1 @@
+<view class="{{['uni-popup', 'data-v-c501667a', e]}}" catchtouchmove="{{f}}"><view class="{{['uni-popup__mask', 'data-v-c501667a', a]}}" bindtap="{{b}}"/><view class="{{['uni-popup__wrapper', 'data-v-c501667a', c]}}" style="{{d}}"><view class="uni-popup__wrapper-box data-v-c501667a"><slot/></view></view></view>

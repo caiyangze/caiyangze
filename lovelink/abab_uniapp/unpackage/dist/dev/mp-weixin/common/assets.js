@@ -1,0 +1,20 @@
+"use strict";
+const _imports_0$3 = "/static/index/coin.png";
+const _imports_1$2 = "/static/icons/more.png";
+const _imports_0$2 = "/static/icons/comment.png";
+const _imports_1$1 = "/static/icons/eye.png";
+const _imports_0$1 = "/static/message/empty.png";
+const _imports_0 = "/static/login/logo.png";
+const _imports_1 = "/static/login/weix.svg";
+const _imports_2 = "/static/login/Q.svg";
+const _imports_3 = "/static/login/weib.svg";
+exports._imports_0 = _imports_0$3;
+exports._imports_0$1 = _imports_0$2;
+exports._imports_0$2 = _imports_0$1;
+exports._imports_0$3 = _imports_0;
+exports._imports_1 = _imports_1$2;
+exports._imports_1$1 = _imports_1$1;
+exports._imports_1$2 = _imports_1;
+exports._imports_2 = _imports_2;
+exports._imports_3 = _imports_3;
+//# sourceMappingURL=../../.sourcemap/mp-weixin/common/assets.js.map

@@ -1,0 +1,91 @@
+.scroll-error-test-page.data-v-972e72a2 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20rpx;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+}
+.header.data-v-972e72a2 {
+  text-align: center;
+  padding: 20rpx 0;
+}
+.header .title.data-v-972e72a2 {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.test-info.data-v-972e72a2 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+.test-info .info-text.data-v-972e72a2 {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 24rpx;
+  line-height: 1.5;
+  margin-bottom: 10rpx;
+}
+.test-buttons.data-v-972e72a2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+.test-buttons .test-btn.data-v-972e72a2 {
+  flex: 1;
+  min-width: 200rpx;
+  height: 70rpx;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+.test-buttons .test-btn.clear-btn.data-v-972e72a2 {
+  background: rgba(255, 107, 107, 0.8);
+}
+.message-container.data-v-972e72a2 {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  max-height: 300rpx;
+}
+.message-container .message-item.data-v-972e72a2 {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10rpx;
+  padding: 15rpx;
+  margin-bottom: 10rpx;
+}
+.message-container .message-item text.data-v-972e72a2 {
+  color: #fff;
+  font-size: 26rpx;
+}
+.log-container.data-v-972e72a2 {
+  height: 300rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+.log-container .log-title.data-v-972e72a2 {
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.log-container .log-content.data-v-972e72a2 {
+  height: 240rpx;
+}
+.log-container .log-content .log-item.data-v-972e72a2 {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 22rpx;
+  line-height: 1.4;
+  margin-bottom: 5rpx;
+}
+.log-container .log-content .log-item.error.data-v-972e72a2 {
+  color: #ff6b6b;
+}

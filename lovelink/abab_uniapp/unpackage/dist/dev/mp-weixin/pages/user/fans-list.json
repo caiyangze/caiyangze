@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "粉丝列表",
+  "navigationBarBackgroundColor": "#667eea",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#667eea",
+  "usingComponents": {}
+}

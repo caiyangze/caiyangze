@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbRole">
+            <id property="roleId" column="role_id" />
+            <result property="roleName" column="role_name" />
+            <result property="roleDesc" column="role_desc" />
+            <result property="roleStatus" column="role_status" />
+            <result property="isSystem" column="is_system" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        role_id,role_name,role_desc,role_status,is_system,created_at,
+        updated_at
+    </sql>
+</mapper>

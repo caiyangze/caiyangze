@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态功能测试页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button.danger {
+            background-color: #dc3545;
+        }
+
+        button.danger:hover {
+            background-color: #c82333;
+        }
+
+        button.success {
+            background-color: #28a745;
+        }
+
+        button.success:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .result.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .result.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .result.info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+
+        .file-input {
+            margin-bottom: 10px;
+        }
+
+        .token-section {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .moment-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+
+        .moment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .moment-content {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .moment-meta {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 动态功能测试页面</h1>
+            <p>测试lovelink-social服务的所有API接口</p>
+        </div>
+
+        <div class="content">
+            <!-- Token配置区域 -->
+            <div class="token-section">
+                <h3>🔑 Token配置</h3>
+                <div class="form-group">
+                    <label for="token">JWT Token (从用户登录接口获取):</label>
+                    <input type="text" id="token" placeholder="请输入JWT Token">
+                </div>
+                <button onclick="testConnection()">测试连接</button>
+                <div id="connectionResult" class="result" style="display: none;"></div>
+            </div>
+
+            <div class="grid">
+                <!-- 左侧：操作区域 -->
+                <div>
+                    <!-- 1. 服务健康检查 -->
+                    <div class="section">
+                        <div class="section-header">🏥 服务健康检查</div>
+                        <div class="section-body">
+                            <button onclick="checkHealth()">检查服务状态</button>
+                            <div id="healthResult" class="result" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 文件上传测试 -->
+                    <div class="section">
+                        <div class="section-header">📁 文件上传测试</div>
+                        <div class="section-body">
+                            <div class="form-group">
+                                <label for="imageFile">选择图片文件:</label>
+                                <input type="file" id="imageFile" accept="image/*" class="file-input">
+                            </div>
+                            <button onclick="uploadImage()">上传单张图片</button>
+                            <button onclick="uploadImageMock()" class="success">模拟上传单张图片</button>
+
+                            <div class="form-group" style="margin-top: 15px;">
+                                <label for="multipleImages">选择多张图片:</label>
+                                <input type="file" id="multipleImages" accept="image/*" multiple class="file-input">
+                            </div>
+                            <button onclick="uploadMultipleImages()">批量上传图片</button>
+                            <button onclick="uploadMultipleImagesMock()" class="success">模拟批量上传图片</button>
+                            
+                            <div id="uploadResult" class="result" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 3. 发布动态 -->
+                    <div class="section">
+                        <div class="section-header">✍️ 发布动态</div>
+                        <div class="section-body">
+                            <div class="form-group">
+                                <label for="momentContent">动态内容:</label>
+                                <textarea id="momentContent" placeholder="分享你的生活..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="momentLocation">位置信息:</label>
+                                <input type="text" id="momentLocation" placeholder="北京市朝阳区">
+                            </div>
+                            <div class="form-group">
+                                <label for="momentVisibility">可见性:</label>
+                                <select id="momentVisibility">
+                                    <option value="1">公开</option>
+                                    <option value="2">仅关注者可见</option>
+                                    <option value="3">仅自己可见</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="momentImages">选择图片:</label>
+                                <input type="file" id="momentImages" accept="image/*" multiple>
+                            </div>
+                            <button onclick="publishMoment()">发布动态</button>
+                            <div id="publishResult" class="result" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 4. 动态管理 -->
+                    <div class="section">
+                        <div class="section-header">⚙️ 动态管理</div>
+                        <div class="section-body">
+                            <div class="form-group">
+                                <label for="momentId">动态ID:</label>
+                                <input type="number" id="momentId" placeholder="请输入动态ID">
+                            </div>
+                            
+                            <button onclick="getMomentDetail()">查看详情</button>
+                            <button onclick="deleteMoment()" class="danger">删除动态</button>
+                            
+                            <div class="form-group" style="margin-top: 15px;">
+                                <label for="newVisibility">新的可见性:</label>
+                                <select id="newVisibility">
+                                    <option value="1">公开</option>
+                                    <option value="2">仅关注者可见</option>
+                                    <option value="3">仅自己可见</option>
+                                </select>
+                            </div>
+                            <button onclick="updateVisibility()">更新可见性</button>
+                            
+                            <div id="manageResult" class="result" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧：查询区域 -->
+                <div>
+                    <!-- 5. 动态查询 -->
+                    <div class="section">
+                        <div class="section-header">🔍 动态查询</div>
+                        <div class="section-body">
+                            <button onclick="getPublicMoments()" class="success">查询公开动态</button>
+                            <button onclick="getMyMoments()" class="success">查询我的动态</button>
+                            
+                            <div class="form-group" style="margin-top: 15px;">
+                                <label for="pageNum">页码:</label>
+                                <input type="number" id="pageNum" value="1" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="pageSize">页大小:</label>
+                                <input type="number" id="pageSize" value="10" min="1" max="50">
+                            </div>
+                            
+                            <div id="queryResult" class="result" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 6. 动态列表显示 -->
+                    <div class="section">
+                        <div class="section-header">📋 动态列表</div>
+                        <div class="section-body">
+                            <div id="momentsList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 基础配置
+        const API_BASE = 'http://localhost:9002/api/social';
+        
+        // 获取Token
+        function getToken() {
+            return document.getElementById('token').value.trim();
+        }
+
+        // 显示结果
+        function showResult(elementId, data, type = 'info') {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = `result ${type}`;
+            element.textContent = typeof data === 'object' ? JSON.stringify(data, null, 2) : data;
+        }
+
+        // HTTP请求封装
+        async function apiRequest(url, options = {}) {
+            const token = getToken();
+            const headers = {
+                'Content-Type': 'application/json',
+                ...options.headers
+            };
+            
+            if (token) {
+                headers['token'] = token;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}${url}`, {
+                    ...options,
+                    headers
+                });
+                
+                const data = await response.json();
+                return { success: response.ok, data, status: response.status };
+            } catch (error) {
+                return { success: false, error: error.message };
+            }
+        }
+
+        // 1. 测试连接
+        async function testConnection() {
+            const result = await apiRequest('/test/hello');
+            showResult('connectionResult', result, result.success ? 'success' : 'error');
+        }
+
+        // 2. 检查服务健康状态
+        async function checkHealth() {
+            const result = await apiRequest('/test/hello');
+            showResult('healthResult', result, result.success ? 'success' : 'error');
+        }
+
+        // 3. 上传单张图片
+        async function uploadImage() {
+            const fileInput = document.getElementById('imageFile');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showResult('uploadResult', '请选择一个图片文件', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const token = getToken();
+                const response = await fetch(`${API_BASE}/file/upload/moment`, {
+                    method: 'POST',
+                    headers: token ? { 'token': token } : {},
+                    body: formData
+                });
+
+                const result = await response.json();
+                showResult('uploadResult', result, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult('uploadResult', `上传失败: ${error.message}`, 'error');
+            }
+        }
+
+        // 4. 批量上传图片
+        async function uploadMultipleImages() {
+            const fileInput = document.getElementById('multipleImages');
+            const files = fileInput.files;
+
+            if (files.length === 0) {
+                showResult('uploadResult', '请选择至少一个图片文件', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            for (let file of files) {
+                formData.append('files', file);
+            }
+
+            try {
+                const token = getToken();
+                const response = await fetch(`${API_BASE}/file/upload/moment/batch`, {
+                    method: 'POST',
+                    headers: token ? { 'token': token } : {},
+                    body: formData
+                });
+
+                const result = await response.json();
+                showResult('uploadResult', result, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult('uploadResult', `批量上传失败: ${error.message}`, 'error');
+            }
+        }
+
+        // 模拟上传单张图片
+        async function uploadImageMock() {
+            const fileInput = document.getElementById('imageFile');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                showResult('uploadResult', '请选择一个图片文件', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const token = getToken();
+                const response = await fetch(`${API_BASE}/mock-file/upload/moment`, {
+                    method: 'POST',
+                    headers: token ? { 'token': token } : {},
+                    body: formData
+                });
+
+                const result = await response.json();
+                showResult('uploadResult', result, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult('uploadResult', `模拟上传失败: ${error.message}`, 'error');
+            }
+        }
+
+        // 模拟批量上传图片
+        async function uploadMultipleImagesMock() {
+            const fileInput = document.getElementById('multipleImages');
+            const files = fileInput.files;
+
+            if (files.length === 0) {
+                showResult('uploadResult', '请选择至少一个图片文件', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            for (let file of files) {
+                formData.append('files', file);
+            }
+
+            try {
+                const token = getToken();
+                const response = await fetch(`${API_BASE}/mock-file/upload/moment/batch`, {
+                    method: 'POST',
+                    headers: token ? { 'token': token } : {},
+                    body: formData
+                });
+
+                const result = await response.json();
+                showResult('uploadResult', result, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult('uploadResult', `模拟批量上传失败: ${error.message}`, 'error');
+            }
+        }
+
+        // 5. 发布动态
+        async function publishMoment() {
+            const content = document.getElementById('momentContent').value.trim();
+            const location = document.getElementById('momentLocation').value.trim();
+            const visibility = document.getElementById('momentVisibility').value;
+            const imageFiles = document.getElementById('momentImages').files;
+
+            if (!content) {
+                showResult('publishResult', '请输入动态内容', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('content', content);
+            if (location) formData.append('location', location);
+            formData.append('visibility', visibility);
+            
+            for (let file of imageFiles) {
+                formData.append('mediaFiles', file);
+            }
+
+            try {
+                const token = getToken();
+                const response = await fetch(`${API_BASE}/moment/create`, {
+                    method: 'POST',
+                    headers: token ? { 'token': token } : {},
+                    body: formData
+                });
+
+                const result = await response.json();
+                showResult('publishResult', result, response.ok ? 'success' : 'error');
+                
+                if (response.ok) {
+                    // 清空表单
+                    document.getElementById('momentContent').value = '';
+                    document.getElementById('momentLocation').value = '';
+                    document.getElementById('momentImages').value = '';
+                    // 刷新动态列表
+                    getPublicMoments();
+                }
+            } catch (error) {
+                showResult('publishResult', `发布失败: ${error.message}`, 'error');
+            }
+        }
+
+        // 6. 查看动态详情
+        async function getMomentDetail() {
+            const momentId = document.getElementById('momentId').value;
+            if (!momentId) {
+                showResult('manageResult', '请输入动态ID', 'error');
+                return;
+            }
+
+            const result = await apiRequest(`/moment/detail/${momentId}`);
+            showResult('manageResult', result, result.success ? 'success' : 'error');
+        }
+
+        // 7. 删除动态
+        async function deleteMoment() {
+            const momentId = document.getElementById('momentId').value;
+            if (!momentId) {
+                showResult('manageResult', '请输入动态ID', 'error');
+                return;
+            }
+
+            if (!confirm('确定要删除这条动态吗？')) {
+                return;
+            }
+
+            const result = await apiRequest(`/moment/delete/${momentId}`, { method: 'DELETE' });
+            showResult('manageResult', result, result.success ? 'success' : 'error');
+            
+            if (result.success) {
+                getPublicMoments(); // 刷新列表
+            }
+        }
+
+        // 8. 更新可见性
+        async function updateVisibility() {
+            const momentId = document.getElementById('momentId').value;
+            const visibility = document.getElementById('newVisibility').value;
+            
+            if (!momentId) {
+                showResult('manageResult', '请输入动态ID', 'error');
+                return;
+            }
+
+            const result = await apiRequest(`/moment/visibility/${momentId}?visibility=${visibility}`, { 
+                method: 'PUT' 
+            });
+            showResult('manageResult', result, result.success ? 'success' : 'error');
+        }
+
+        // 9. 查询公开动态
+        async function getPublicMoments() {
+            const pageNum = document.getElementById('pageNum').value || 1;
+            const pageSize = document.getElementById('pageSize').value || 10;
+            
+            const result = await apiRequest(`/moment/public?pageNum=${pageNum}&pageSize=${pageSize}`);
+            showResult('queryResult', result, result.success ? 'success' : 'error');
+            
+            if (result.success && result.data && result.data.data) {
+                displayMoments(result.data.data.records || []);
+            }
+        }
+
+        // 10. 查询我的动态
+        async function getMyMoments() {
+            const pageNum = document.getElementById('pageNum').value || 1;
+            const pageSize = document.getElementById('pageSize').value || 10;
+            
+            const result = await apiRequest(`/moment/mine?pageNum=${pageNum}&pageSize=${pageSize}`);
+            showResult('queryResult', result, result.success ? 'success' : 'error');
+            
+            if (result.success && result.data && result.data.data) {
+                displayMoments(result.data.data.records || []);
+            }
+        }
+
+        // 显示动态列表
+        function displayMoments(moments) {
+            const container = document.getElementById('momentsList');
+            
+            if (!moments || moments.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666;">暂无动态</p>';
+                return;
+            }
+
+            container.innerHTML = moments.map(moment => `
+                <div class="moment-item">
+                    <div class="moment-header">
+                        <strong>${moment.nickname || '匿名用户'}</strong>
+                        <span style="font-size: 12px; color: #666;">ID: ${moment.momentId}</span>
+                    </div>
+                    <div class="moment-content">${moment.content}</div>
+                    ${moment.location ? `<div style="font-size: 12px; color: #666;">📍 ${moment.location}</div>` : ''}
+                    <div class="moment-meta">
+                        <span>👁️ ${moment.viewCount || 0}</span>
+                        <span>❤️ ${moment.likeCount || 0}</span>
+                        <span>💬 ${moment.commentCount || 0}</span>
+                        <span>🔒 ${getVisibilityText(moment.visibility)}</span>
+                        <span>⏰ ${new Date(moment.createdAt).toLocaleString()}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 获取可见性文本
+        function getVisibilityText(visibility) {
+            const texts = { 1: '公开', 2: '仅关注者', 3: '仅自己' };
+            return texts[visibility] || '未知';
+        }
+
+        // 页面加载完成后自动检查服务状态
+        window.onload = function() {
+            checkHealth();
+        };
+    </script>
+</body>
+</html>

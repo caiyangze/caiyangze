@@ -1,0 +1,98 @@
+.test-page.data-v-1edb4245 {
+  padding: 20rpx;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+.header.data-v-1edb4245 {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.header .title.data-v-1edb4245 {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+.test-section.data-v-1edb4245 {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+.test-section .section-title.data-v-1edb4245 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+.test-section .test-item .test-input.data-v-1edb4245 {
+  width: 100%;
+  padding: 20rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.test-section .test-item .test-btn.data-v-1edb4245 {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 8rpx;
+  padding: 20rpx 40rpx;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.test-section .test-item .play-btn.data-v-1edb4245 {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: #fff;
+  border: none;
+  border-radius: 8rpx;
+  padding: 15rpx 30rpx;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.test-section .test-item .result.data-v-1edb4245 {
+  background: #f8f9fa;
+  border: 1rpx solid #e9ecef;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+.test-section .test-item .result .result-text.data-v-1edb4245 {
+  font-size: 24rpx;
+  color: #666;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.log-section.data-v-1edb4245 {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+.log-section .section-title.data-v-1edb4245 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+.log-section .log-container.data-v-1edb4245 {
+  height: 400rpx;
+  border: 1rpx solid #e9ecef;
+  border-radius: 8rpx;
+  padding: 10rpx;
+}
+.log-section .log-container .log-item.data-v-1edb4245 {
+  padding: 8rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.log-section .log-container .log-item.data-v-1edb4245:last-child {
+  border-bottom: none;
+}
+.log-section .log-container .log-item .log-text.data-v-1edb4245 {
+  font-size: 22rpx;
+  color: #666;
+  word-wrap: break-word;
+}

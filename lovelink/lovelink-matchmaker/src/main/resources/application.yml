@@ -1,0 +1,87 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: lovelink-matchmaker
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://obmt6t2w67onmti8-mi.aliyun-cn-beijing-internet.oceanbase.cloud:3306/lovelink?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: feidaowudi
+    password: feidaowudi_520
+  redis:
+    host: 182.254.244.209
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+  # CORS配置
+  mvc:
+    cors:
+      # 允许跨域请求的路径
+      mapping: /**
+      # 允许跨域请求的域名
+      allowed-origins: "*"
+      # 允许请求的方法
+      allowed-methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+        - HEAD
+        - PATCH
+      # 允许的头信息
+      allowed-headers: "*"
+      # 是否允许发送Cookie
+      allow-credentials: false
+      # 跨域允许时间
+      max-age: 3600
+      # 暴露的头信息
+      exposed-headers:
+        - Authorization
+        - Content-Type
+        - X-Requested-With
+        - Accept
+        - Origin
+        - Access-Control-Request-Method
+        - Access-Control-Request-Headers
+        - Access-Control-Allow-Origin
+
+# MinIO配置
+minio:
+  endpoint: http://182.254.244.209:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: lovelink
+
+# MyBatis-Plus配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# Feign 客户端配置
+feign:
+  client:
+    lovelink-user:
+      url: http://localhost:9001
+  hystrix:
+    enabled: false
+# 日志配置
+logging:
+  level:
+    com.zhentao: debug
+    org.springframework.web: debug

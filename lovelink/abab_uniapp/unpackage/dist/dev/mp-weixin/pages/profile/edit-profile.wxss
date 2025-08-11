@@ -1,0 +1,352 @@
+page {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.edit-profile-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.edit-profile-page .bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.edit-profile-page .bg-layer .bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #12C2E9, #C471ED, #F64F59);
+  background-size: 300% 300%;
+  animation: gradientAnimation 15s ease infinite;
+  position: relative;
+}
+@keyframes gradientAnimation {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
+.edit-profile-page .bg-layer .bg-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,64L48,96C96,128,192,192,288,202.7C384,213,480,171,576,165.3C672,160,768,192,864,197.3C960,203,1056,181,1152,165.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+  background-size: 100% 40%;
+  opacity: 0.6;
+}
+.edit-profile-page .bg-layer .bg-gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%);
+}
+.edit-profile-page .bg-layer .overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.edit-profile-page .bg-layer .overlay-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(255,255,255,0.03)" width="50" height="50" x="0" y="0"></rect><rect fill="rgba(255,255,255,0.03)" width="50" height="50" x="50" y="50"></rect></svg>');
+  background-size: 20px 20px;
+  opacity: 0.5;
+}
+.edit-profile-page .content-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.edit-profile-page .content-container .header {
+  margin-top: 120rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-profile-page .content-container .header .page-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+}
+.edit-profile-page .content-container .header .slogan {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2rpx;
+}
+.edit-profile-page .content-container .top-buttons {
+  position: absolute;
+  top: 40rpx;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+}
+.edit-profile-page .content-container .top-buttons .back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80rpx;
+  height: 80rpx;
+  cursor: pointer;
+}
+.edit-profile-page .content-container .top-buttons .back-btn .back-arrow {
+  font-size: 48rpx;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.5);
+}
+.edit-profile-page .content-container .top-buttons .back-btn:active {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+.edit-profile-page .content-container .top-buttons .save-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.edit-profile-page .content-container .top-buttons .save-btn-container .save-btn {
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.5);
+  padding: 12rpx 24rpx;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 40rpx;
+  -webkit-backdrop-filter: blur(15rpx);
+          backdrop-filter: blur(15rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+}
+.edit-profile-page .content-container .top-buttons .save-btn-container .loading-icon {
+  width: 36rpx;
+  height: 36rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 4rpx solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.edit-profile-page .content-container .top-buttons .save-btn-container:active:not(.disabled) {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+.edit-profile-page .content-container .top-buttons .save-btn-container.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+@keyframes spin {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+.edit-profile-page .content-container .profile-form-card {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.15), 0 0 20rpx rgba(255, 255, 255, 0.1);
+  padding: 30rpx 20rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.edit-profile-page .content-container .profile-form-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rpx;
+  background: linear-gradient(to right, #12C2E9, #C471ED, #F64F59);
+}
+.edit-profile-page .content-container .profile-form-card .form-scroll-view {
+  flex: 1;
+  height: calc(100vh - 250rpx);
+  max-height: calc(100vh - 250rpx);
+}
+.edit-profile-page .content-container .profile-form-card .form-container {
+  padding: 10rpx;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section {
+  margin-bottom: 40rpx;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  position: relative;
+  padding-left: 20rpx;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6rpx;
+  height: 28rpx;
+  background: linear-gradient(to bottom, #12C2E9, #C471ED);
+  border-radius: 3rpx;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .input-group {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .input-group .input-label {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .input-group .input-field {
+  flex: 1;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .input-group .upload-field {
+  flex: 1;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #999;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .input-group .upload-field .uploaded {
+  color: #12C2E9;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .input-group .upload-field .upload-icon {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 36rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 2rpx solid #999;
+  color: #999;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .select-group {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .select-group .select-label {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .select-group .picker {
+  flex: 1;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .select-group .picker .picker-value {
+  font-size: 28rpx;
+  color: #333;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .textarea-group {
+  padding: 20rpx 0;
+  position: relative;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .textarea-group .textarea-field {
+  width: 100%;
+  height: 200rpx;
+  font-size: 28rpx;
+  color: #333;
+  background-color: #f8f8f8;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.edit-profile-page .content-container .profile-form-card .form-container .form-section .textarea-group .textarea-counter {
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.edit-profile-page .content-container .profile-form-card .submit-btn {
+  width: 90%;
+  height: 90rpx;
+  background: linear-gradient(45deg, #12C2E9, #C471ED, #F64F59);
+  background-size: 300% 300%;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 45rpx;
+  margin: 20rpx auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10rpx 20rpx rgba(196, 113, 237, 0.4);
+  animation: gradientAnimation 15s ease infinite;
+}
+.edit-profile-page .content-container .profile-form-card .submit-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 5rpx 10rpx rgba(233, 64, 87, 0.3);
+}
+.edit-profile-page .content-container .profile-form-card .submit-btn.loading {
+  opacity: 0.8;
+}
+.edit-profile-page .content-container .profile-form-card .submit-btn .btn-loading {
+  width: 36rpx;
+  height: 36rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 4rpx solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}

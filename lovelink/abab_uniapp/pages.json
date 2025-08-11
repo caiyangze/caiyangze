@@ -1,0 +1,404 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "enablePullDownRefresh": false,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/square/square",
+      "style": {
+        "navigationBarTitleText": "广场",
+        "enablePullDownRefresh": true,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/message/message",
+      "style": {
+        "navigationBarTitleText": "消息",
+        "enablePullDownRefresh": false,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/ai-chat/ai-chat",
+      "style": {
+        "navigationBarTitleText": "AI红娘",
+        "enablePullDownRefresh": false,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/ai-test",
+      "style": {
+        "navigationBarTitleText": "AI测试",
+        "enablePullDownRefresh": false,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/click-test",
+      "style": {
+        "navigationBarTitleText": "点击测试",
+        "enablePullDownRefresh": false,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/simple-chat",
+      "style": {
+        "navigationBarTitleText": "简化聊天测试",
+        "enablePullDownRefresh": false,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/mine/mine",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "enablePullDownRefresh": false,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/wallet/wallet",
+      "style": {
+        "navigationBarTitleText": "我的钱包",
+        "enablePullDownRefresh": true,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/register/register",
+      "style": {
+        "navigationBarTitleText": "注册",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/register/user-info",
+      "style": {
+        "navigationBarTitleText": "完善信息",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/profile/edit-profile",
+      "style": {
+        "navigationBarTitleText": "编辑资料",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/message/chat",
+      "style": {
+        "navigationBarTitleText": "聊天",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/chat-test",
+      "style": {
+        "navigationBarTitleText": "聊天测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/user-detail-test",
+      "style": {
+        "navigationBarTitleText": "用户详情测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/scroll-test",
+      "style": {
+        "navigationBarTitleText": "滚动功能测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/navigation-test",
+      "style": {
+        "navigationBarTitleText": "导航测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/scroll-error-test",
+      "style": {
+        "navigationBarTitleText": "滚动错误修复测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/tabbar-test",
+      "style": {
+        "navigationBarTitleText": "底部导航栏测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/user/user-detail",
+      "style": {
+        "navigationBarTitleText": "用户详情",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/moment/publish",
+      "style": {
+        "navigationBarTitleText": "发布动态",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/moment/list",
+      "style": {
+        "navigationBarTitleText": "动态广场",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/moment/detail",
+      "style": {
+        "navigationBarTitleText": "动态详情",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/user/fans-list",
+      "style": {
+        "navigationBarTitleText": "粉丝列表",
+        "navigationBarBackgroundColor": "#667eea",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#667eea"
+      }
+    },
+    {
+      "path": "pages/user/following-list",
+      "style": {
+        "navigationBarTitleText": "关注列表",
+        "navigationBarBackgroundColor": "#667eea",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#667eea"
+      }
+    },
+    {
+      "path": "pages/voucher/voucher-list",
+      "style": {
+        "navigationBarTitleText": "优惠券中心",
+        "enablePullDownRefresh": true,
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/sign/sign",
+      "style": {
+        "navigationBarTitleText": "每日签到",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/game/heart-match",
+      "style": {
+        "navigationBarTitleText": "心动速配",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/game/match-result",
+      "style": {
+        "navigationBarTitleText": "匹配结果",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/vip/recharge",
+      "style": {
+        "navigationBarTitleText": "开通VIP",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/vip/success",
+      "style": {
+        "navigationBarTitleText": "开通成功",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/vip/order-detail",
+      "style": {
+        "navigationBarTitleText": "订单详情",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/vip-test",
+      "style": {
+        "navigationBarTitleText": "VIP功能测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/vip-complete-test",
+      "style": {
+        "navigationBarTitleText": "VIP完整功能测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/matchmaker/apply",
+      "style": {
+        "navigationBarTitleText": "申请成为红娘",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/profile/verify",
+      "style": {
+        "navigationBarTitleText": "实名认证",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/mine/album",
+      "style": {
+        "navigationBarTitleText": "我的相册",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/test/album-test",
+      "style": {
+        "navigationBarTitleText": "相册功能测试",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "缘来如此",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "condition": {
+    "current": 0,
+    "list": [
+      {
+        "name": "首页",
+        "path": "pages/index/index"
+      },
+      {
+        "name": "广场",
+        "path": "pages/square/square"
+      },
+      {
+        "name": "消息",
+        "path": "pages/message/message"
+      },
+      {
+        "name": "我的",
+        "path": "pages/mine/mine"
+      },
+      {
+        "name": "登录",
+        "path": "pages/login/login"
+      },
+      {
+        "name": "注册",
+        "path": "pages/register/register"
+      },
+      {
+        "name": "完善信息",
+        "path": "pages/register/user-info"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbChatSettingMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbChatSetting">
+            <id property="settingId" column="setting_id" />
+            <result property="userId" column="user_id" />
+            <result property="allowStrangerMessage" column="allow_stranger_message" />
+            <result property="messageNotification" column="message_notification" />
+            <result property="soundNotification" column="sound_notification" />
+            <result property="vibrationNotification" column="vibration_notification" />
+            <result property="showReadStatus" column="show_read_status" />
+            <result property="autoDownloadMedia" column="auto_download_media" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        setting_id,user_id,allow_stranger_message,message_notification,sound_notification,vibration_notification,
+        show_read_status,auto_download_media,created_at,updated_at
+    </sql>
+</mapper>

@@ -1,0 +1,225 @@
+.sign-page.data-v-bf476203 {
+  min-height: 100vh;
+  position: relative;
+}
+.sign-page .bg-layer.data-v-bf476203 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.sign-page .bg-layer .bg-gradient.data-v-bf476203 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.sign-page .content-container.data-v-bf476203 {
+  padding: 40rpx 30rpx;
+  padding-top: calc(var(--status-bar-height) + 40rpx);
+}
+.sign-page .content-container .nav-bar.data-v-bf476203 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+.sign-page .content-container .nav-bar .nav-left.data-v-bf476203 {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-page .content-container .nav-bar .nav-left .nav-icon.data-v-bf476203 {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.sign-page .content-container .nav-bar .nav-title.data-v-bf476203 {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.sign-page .content-container .nav-bar .nav-right.data-v-bf476203 {
+  width: 80rpx;
+}
+.sign-page .content-container .stats-card.data-v-bf476203 {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+.sign-page .content-container .stats-card .stats-item.data-v-bf476203 {
+  flex: 1;
+  text-align: center;
+}
+.sign-page .content-container .stats-card .stats-item .stats-number.data-v-bf476203 {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+.sign-page .content-container .stats-card .stats-item .stats-label.data-v-bf476203 {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+.sign-page .content-container .stats-card .stats-divider.data-v-bf476203 {
+  width: 2rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 40rpx;
+}
+.sign-page .content-container .sign-button-container.data-v-bf476203 {
+  margin-bottom: 40rpx;
+}
+.sign-page .content-container .sign-button-container .sign-button.data-v-bf476203 {
+  width: 100%;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8rpx 30rpx rgba(255, 107, 107, 0.3);
+}
+.sign-page .content-container .sign-button-container .sign-button.signed.data-v-bf476203 {
+  background: linear-gradient(135deg, #52c41a, #73d13d);
+  box-shadow: 0 8rpx 30rpx rgba(82, 196, 26, 0.3);
+}
+.sign-page .content-container .sign-button-container .sign-button.loading.data-v-bf476203 {
+  opacity: 0.7;
+}
+.sign-page .content-container .sign-button-container .sign-button .button-content.data-v-bf476203 {
+  display: flex;
+  align-items: center;
+}
+.sign-page .content-container .sign-button-container .sign-button .button-content .button-icon.data-v-bf476203 {
+  font-size: 32rpx;
+  margin-right: 15rpx;
+}
+.sign-page .content-container .sign-button-container .sign-button .button-content .button-text.data-v-bf476203 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.sign-page .content-container .reward-section.data-v-bf476203 {
+  margin-bottom: 40rpx;
+}
+.sign-page .content-container .reward-section .section-title.data-v-bf476203 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20rpx;
+  display: block;
+}
+.sign-page .content-container .reward-section .reward-list.data-v-bf476203 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+.sign-page .content-container .reward-section .reward-list .reward-item.data-v-bf476203 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.sign-page .content-container .reward-section .reward-list .reward-item.data-v-bf476203:last-child {
+  margin-bottom: 0;
+}
+.sign-page .content-container .reward-section .reward-list .reward-item .reward-icon.data-v-bf476203 {
+  font-size: 32rpx;
+  margin-right: 20rpx;
+}
+.sign-page .content-container .reward-section .reward-list .reward-item .reward-text.data-v-bf476203 {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+.sign-page .content-container .history-section .section-title.data-v-bf476203 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20rpx;
+  display: block;
+}
+.sign-page .content-container .history-section .calendar-container.data-v-bf476203 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-header.data-v-bf476203 {
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-header .month-text.data-v-bf476203 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.sign-page .content-container .history-section .calendar-container .week-header.data-v-bf476203 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10rpx;
+  margin-bottom: 20rpx;
+}
+.sign-page .content-container .history-section .calendar-container .week-header .week-item.data-v-bf476203 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+}
+.sign-page .content-container .history-section .calendar-container .week-header .week-item .week-text.data-v-bf476203 {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid.data-v-bf476203 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10rpx;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day.data-v-bf476203 {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rpx;
+  position: relative;
+  min-height: 80rpx;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day.today.data-v-bf476203 {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2rpx solid #fff;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day.signed.data-v-bf476203 {
+  background: rgba(82, 196, 26, 0.4);
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day.signed .day-number.data-v-bf476203 {
+  color: #52c41a;
+  font-weight: bold;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day.disabled.data-v-bf476203 {
+  opacity: 0.3;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day.disabled .day-number.data-v-bf476203 {
+  color: rgba(255, 255, 255, 0.4);
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day .day-number.data-v-bf476203 {
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: normal;
+}
+.sign-page .content-container .history-section .calendar-container .calendar-grid .calendar-day .sign-mark.data-v-bf476203 {
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+  font-size: 20rpx;
+  color: #52c41a;
+  font-weight: bold;
+}

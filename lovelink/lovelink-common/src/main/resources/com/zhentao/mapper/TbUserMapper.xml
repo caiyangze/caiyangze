@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbUser">
+            <id property="userId" column="user_id" />
+            <result property="phone" column="phone" />
+            <result property="password" column="password" />
+            <result property="nickname" column="nickname" />
+            <result property="gender" column="gender" />
+            <result property="birthDate" column="birth_date" />
+            <result property="avatarUrl" column="avatar_url" />
+            <result property="fan" column="fan" />
+            <result property="countFollow" column="count_follow" />
+            <result property="countLike" column="count_like" />
+            <result property="userRole" column="user_role" />
+            <result property="registerSource" column="register_source" />
+            <result property="openId" column="open_id" />
+            <result property="registerTime" column="register_time" />
+            <result property="lastLoginTime" column="last_login_time" />
+            <result property="lastLoginIp" column="last_login_ip" />
+            <result property="accountStatus" column="account_status" />
+            <result property="isVerified" column="is_verified" />
+            <result property="isVip" column="is_vip" />
+            <result property="vipExpireTime" column="vip_expire_time" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,phone,password,nickname,gender,birth_date,
+        avatar_url,fan,count_follow,count_like,user_role,
+        register_source,open_id,register_time,last_login_time,last_login_ip,
+        account_status,is_verified,is_vip,vip_expire_time,created_at,
+        updated_at
+    </sql>
+</mapper>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "底部导航栏测试",
+  "usingComponents": {
+    "custom-tab-bar": "../../components/custom-tab-bar"
+  }
+}

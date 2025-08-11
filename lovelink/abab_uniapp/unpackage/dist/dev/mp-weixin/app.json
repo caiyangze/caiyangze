@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/square/square",
+    "pages/message/message",
+    "pages/mine/mine",
+    "pages/wallet/wallet",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/register/user-info",
+    "pages/profile/edit-profile",
+    "pages/message/chat",
+    "pages/test/chat-test",
+    "pages/test/user-detail-test",
+    "pages/test/scroll-test",
+    "pages/test/navigation-test",
+    "pages/test/scroll-error-test",
+    "pages/test/tabbar-test",
+    "pages/user/user-detail",
+    "pages/moment/publish",
+    "pages/moment/list",
+    "pages/moment/detail",
+    "pages/user/fans-list",
+    "pages/user/following-list",
+    "pages/voucher/voucher-list",
+    "pages/sign/sign",
+    "pages/game/heart-match",
+    "pages/game/match-result",
+    "pages/vip/recharge",
+    "pages/vip/success",
+    "pages/vip/order-detail",
+    "pages/test/vip-test",
+    "pages/test/vip-complete-test",
+    "pages/matchmaker/apply",
+    "pages/profile/verify",
+    "pages/mine/album",
+    "pages/test/album-test"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "缘来如此",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {
+    "uni-popup": "/components/common/uni-popup",
+    "custom-tab-bar": "/components/custom-tab-bar"
+  }
+}

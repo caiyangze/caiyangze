@@ -1,0 +1,44 @@
+/* 图片占位样式 */
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #999;
+    font-size: 24rpx;
+    text-align: center;
+}
+
+/* 登录页面占位图样式 */
+.login-bg-placeholder {
+    width: 100%;
+    height: 400rpx;
+    background: linear-gradient(to bottom, #ff8a00, #ff5e5e);
+}
+
+.logo-placeholder {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff5e5e;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.icon-placeholder {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.third-icon-placeholder {
+    width: 50rpx;
+    height: 50rpx;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+} 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhentao.mapper.TbFollowMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhentao.pojo.TbFollow">
+            <id property="followId" column="follow_id" />
+            <result property="userId" column="user_id" />
+            <result property="followedUserId" column="followed_user_id" />
+            <result property="followStatus" column="follow_status" />
+            <result property="createdAt" column="created_at" />
+            <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        follow_id,user_id,followed_user_id,follow_status,created_at,updated_at
+    </sql>
+</mapper>

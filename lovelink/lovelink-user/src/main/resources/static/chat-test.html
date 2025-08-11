@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket聊天测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .message.sent {
+            background-color: #dcf8c6;
+            text-align: right;
+        }
+        .message.received {
+            background-color: #fff;
+            text-align: left;
+        }
+        .message.system {
+            background-color: #e3f2fd;
+            text-align: center;
+            font-style: italic;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+        input[type="text"] {
+            width: 200px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        .status.connected {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status.disconnected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebSocket聊天测试</h1>
+    
+    <div class="container">
+        <h3>连接设置</h3>
+        <input type="text" id="tokenInput" placeholder="请输入JWT Token" style="width: 400px;">
+        <button onclick="connect()">连接</button>
+        <button onclick="disconnect()">断开连接</button>
+        <div id="status" class="status disconnected">未连接</div>
+    </div>
+    
+    <div class="container">
+        <h3>聊天消息</h3>
+        <div id="messages" class="messages"></div>
+        
+        <div>
+            <input type="text" id="receiverIdInput" placeholder="接收者ID">
+            <input type="text" id="messageInput" placeholder="输入消息内容" style="width: 300px;">
+            <button onclick="sendMessage()">发送消息</button>
+        </div>
+        
+        <div>
+            <button onclick="sendHeartbeat()">发送心跳</button>
+            <button onclick="clearMessages()">清空消息</button>
+        </div>
+    </div>
+
+    <script>
+        let websocket = null;
+        let isConnected = false;
+
+        function connect() {
+            const token = document.getElementById('tokenInput').value;
+            if (!token) {
+                alert('请输入JWT Token');
+                return;
+            }
+
+            const wsUrl = `ws://localhost:9001/chat?token=${encodeURIComponent(token)}`;
+            
+            try {
+                websocket = new WebSocket(wsUrl);
+                
+                websocket.onopen = function(event) {
+                    isConnected = true;
+                    updateStatus('已连接', 'connected');
+                    addMessage('系统', '连接成功', 'system');
+                };
+                
+                websocket.onmessage = function(event) {
+                    const message = JSON.parse(event.data);
+                    addMessage('接收', JSON.stringify(message, null, 2), 'received');
+                };
+                
+                websocket.onclose = function(event) {
+                    isConnected = false;
+                    updateStatus('连接已关闭', 'disconnected');
+                    addMessage('系统', `连接关闭: ${event.code} - ${event.reason}`, 'system');
+                };
+                
+                websocket.onerror = function(error) {
+                    addMessage('系统', `连接错误: ${error}`, 'system');
+                };
+                
+            } catch (error) {
+                addMessage('系统', `连接失败: ${error}`, 'system');
+            }
+        }
+
+        function disconnect() {
+            if (websocket) {
+                websocket.close();
+                websocket = null;
+            }
+        }
+
+        function sendMessage() {
+            if (!isConnected) {
+                alert('请先连接WebSocket');
+                return;
+            }
+
+            const receiverId = document.getElementById('receiverIdInput').value;
+            const content = document.getElementById('messageInput').value;
+            
+            if (!receiverId || !content) {
+                alert('请输入接收者ID和消息内容');
+                return;
+            }
+
+            const message = {
+                type: 'CHAT',
+                timestamp: Date.now(),
+                data: {
+                    receiverId: parseInt(receiverId),
+                    messageType: 1,
+                    content: content
+                }
+            };
+
+            websocket.send(JSON.stringify(message));
+            addMessage('发送', JSON.stringify(message, null, 2), 'sent');
+            
+            // 清空输入框
+            document.getElementById('messageInput').value = '';
+        }
+
+        function sendHeartbeat() {
+            if (!isConnected) {
+                alert('请先连接WebSocket');
+                return;
+            }
+
+            const message = {
+                type: 'HEARTBEAT',
+                timestamp: Date.now(),
+                data: 'ping'
+            };
+
+            websocket.send(JSON.stringify(message));
+            addMessage('发送', '心跳消息', 'sent');
+        }
+
+        function addMessage(type, content, className) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${className}`;
+            messageDiv.innerHTML = `<strong>[${new Date().toLocaleTimeString()}] ${type}:</strong><br><pre>${content}</pre>`;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function updateStatus(text, className) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = text;
+            statusDiv.className = `status ${className}`;
+        }
+
+        function clearMessages() {
+            document.getElementById('messages').innerHTML = '';
+        }
+
+        // 页面关闭时断开连接
+        window.addEventListener('beforeunload', function() {
+            if (websocket) {
+                websocket.close();
+            }
+        });
+    </script>
+</body>
+</html>

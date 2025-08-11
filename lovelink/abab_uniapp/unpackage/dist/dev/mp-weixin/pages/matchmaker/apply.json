@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "申请成为红娘",
+  "usingComponents": {
+    "voucher-selector": "../../components/voucher-selector/voucher-selector"
+  }
+}
